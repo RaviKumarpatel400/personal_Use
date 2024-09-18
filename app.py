@@ -25,10 +25,6 @@ class User(UserMixin):
 
 # In-memory user store
 users = {'admin': 'password'}  # You can add more users here
-users = {'220101120253': 'Ravi@1234'} 
-users = {'220101120273': 'Ankit@1234'} 
-users = {'220101120258': 'AnkitSah@1234'} 
-users = {'220101120248': 'Rohit@1234'} 
 
 @login_manager.user_loader
 def load_user(user_id):
