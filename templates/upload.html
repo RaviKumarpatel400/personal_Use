@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <style>
+        /* General page styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            height: 100%;
+            background: url('https://img.freepik.com/premium-photo/woman-singing-into-microphone-with-word-it_1069334-662.jpg?w=1060') no-repeat center center;
+            background-size: cover;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            animation: glowingContainer 1.5s infinite;
+            text-align: center;
+            margin-top: 200px;
+            margin-right: 100px;
+            border: 1px solid #00ffcc;
+        }
+
+        /* Glowing effect for the container */
+        @keyframes glowingContainer {
+            0% { box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+            50% { box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
+            100% { box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+        }
+
+        /* Navigation bar styling */
+        nav {
+            background: rgba(0, 255, 204, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px solid #00ffcc;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        input[type="file"]:hover {
+            border-color: #ff4d4d;
+            background: #444;
+        }
+
+        button {
+            background: #00ffcc;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background: #ff4d4d;
+            color: #fff;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation bar -->
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/upload">Upload</a> |
+            <a href="/logout">Logout</a>
+        </nav>
+
+        <h1>Upload a New File</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <!-- Footer -->
+        <footer>
+            #####Ravi Kumar#####
+        </footer>
+    </div>
+</body>
+</html>

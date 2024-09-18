@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Storage</title>
+    <style>
+        /* General page styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            height: 100%;
+            background: url('https://img.freepik.com/premium-photo/robot-with-head-hands-is-looking-camera-by-ai-generated-image_49553-11613.jpg?w=1060') no-repeat center center;
+            background-size: cover;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            animation: glowingContainer 1.5s infinite;
+            text-align: center;
+            margin-left: 80px;
+            margin-top: 170px;
+            border: 1px solid #00ffcc;
+        }
+
+        /* Glowing effect for the container */
+        @keyframes glowingContainer {
+            0% { box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+            50% { box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
+            100% { box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; }
+        }
+
+        /* Navigation bar styling */
+        nav {
+            background: rgba(0, 255, 204, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #00ffcc;
+            text-transform: uppercase;
+            animation: neonText 2s infinite alternate;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #ff4d4d;
+        }
+
+        /* Glowing animation for text */
+        @keyframes neonText {
+            0% {
+                text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc, 0 0 20px #00ffcc;
+            }
+            100% {
+                text-shadow: 0 0 20px #ff4d4d, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d, 0 0 50px #ff4d4d;
+            }
+        }
+
+        /* File list styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: rgba(0, 255, 204, 0.1);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        ul li:hover {
+            transform: scale(1.05);
+            background: rgba(0, 255, 204, 0.3);
+        }
+
+        ul li a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        ul li a:hover {
+            color: #ff4d4d;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation bar -->
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/upload">Upload</a> |
+            <a href="/logout">Logout</a>
+        </nav>
+
+        <h1>Welcome to My Personal Storage</h1>
+        <h2>Your Files</h2>
+        
+        <ul>
+            {% for file in files %}
+            <li><a href="{{ url_for('uploaded_file', filename=file) }}">{{ file }}</a></li>
+            {% else %}
+            <li>No files found.</li>
+            {% endfor %}
+        </ul>
+
+        <!-- Footer -->
+        <footer>
+            &copy; Ravi Kumar(Personal Storage). All Rights Reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
