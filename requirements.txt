@@ -1,2 +1,2 @@
-pip install Flask-Login
-gunicorn
+Flask==2.2.3
+Flask-Login==0.6.2
